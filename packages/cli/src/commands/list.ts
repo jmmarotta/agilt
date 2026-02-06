@@ -9,7 +9,7 @@ import {
   renderBoard,
   renderList,
   type IssueStatus,
-} from "@aglit/sdk";
+} from "@jmmarotta/aglit-sdk";
 
 import type { AglitCliContext } from "../types";
 import { requireWorkspaceRoot } from "../workspace";

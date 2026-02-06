@@ -2,7 +2,7 @@ import * as path from "node:path";
 
 import { buildCommand } from "@stricli/core";
 
-import { checkWorkspace } from "@aglit/sdk";
+import { checkWorkspace } from "@jmmarotta/aglit-sdk";
 
 import type { AglitCliContext } from "../types";
 import { requireWorkspaceRoot } from "../workspace";

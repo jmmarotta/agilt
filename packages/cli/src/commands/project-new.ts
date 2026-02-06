@@ -7,7 +7,7 @@ import {
   createProjectFile,
   type IssueStatus,
   type Priority,
-} from "@aglit/sdk";
+} from "@jmmarotta/aglit-sdk";
 
 import type { AglitCliContext } from "../types";
 import { requireWorkspaceRoot } from "../workspace";

@@ -1,7 +1,7 @@
 import type { FlagParametersForType } from "@stricli/core";
 import { buildCommand } from "@stricli/core";
 
-import { ensureAglit, getConfig, setConfig } from "@aglit/sdk";
+import { ensureAglit, getConfig, setConfig } from "@jmmarotta/aglit-sdk";
 
 import type { AglitCliContext } from "../types";
 import { findWorkspaceRoot } from "../workspace";

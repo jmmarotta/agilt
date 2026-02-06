@@ -1,7 +1,12 @@
 import type { FlagParametersForType, InputParser } from "@stricli/core";
 import { buildCommand } from "@stricli/core";
 
-import { ISSUE_STATUSES, getProjectsView, renderProjects, type IssueStatus } from "@aglit/sdk";
+import {
+  ISSUE_STATUSES,
+  getProjectsView,
+  renderProjects,
+  type IssueStatus,
+} from "@jmmarotta/aglit-sdk";
 
 import type { AglitCliContext } from "../types";
 import { requireWorkspaceRoot } from "../workspace";

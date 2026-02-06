@@ -8,9 +8,9 @@ See `plans/major_overhaul.md` for the current design plan.
 
 ## Packages
 
-- `packages/sdk` (@aglit/sdk): ids, storage, headers, views
+- `packages/sdk` (@jmmarotta/aglit-sdk): ids, storage, headers, views
 - `packages/cli` (aglit): CLI wrapper over the SDK
-- `packages/opencode-plugin` (opencode-aglit): OpenCode protocol injection
+- `packages/opencode-plugin` (@jmmarotta/opencode-aglit): OpenCode protocol injection
 
 ## Setup
 
@@ -27,10 +27,27 @@ bun test
 bun lint
 bun fmt:check
 bun typecheck
-bun build
+bun run build
 ```
 
 ## CLI
+
+Install (published):
+```bash
+bun install -g aglit
+aglit --help
+```
+
+Run without installing (published):
+```bash
+bunx aglit --help
+```
+
+Local install from a checkout:
+```bash
+bun run build -C packages/cli
+bun add -g file:./packages/cli
+```
 
 ```bash
 aglit init --prefix ABC

@@ -27,6 +27,16 @@
     "test": {
       "dependsOn": ["^test"],
       "outputs": []
+    },
+    "publish:dry": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "outputs": []
+    },
+    "publish:run": {
+      "dependsOn": ["build"],
+      "cache": false,
+      "outputs": []
     }
   }
 }
