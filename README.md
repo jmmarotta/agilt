@@ -43,10 +43,23 @@ Run without installing (published):
 bunx aglit --help
 ```
 
-Local install from a checkout:
+Local development from a checkout (`bun link`):
 ```bash
-bun run build -C packages/cli
-bun add -g file:./packages/cli
+bun run --cwd packages/cli build
+bun link --cwd packages/cli
+
+# in another project directory
+bun link aglit
+aglit --help
+```
+
+Publish-like local install check (tarball):
+```bash
+bun run --cwd packages/cli build
+TARBALL="$(bun pm --cwd packages/cli pack --quiet --ignore-scripts --destination "$PWD/packages/cli" | tr -d '\n')"
+bun remove -g aglit
+bun add -g "$TARBALL"
+aglit --help
 ```
 
 ```bash

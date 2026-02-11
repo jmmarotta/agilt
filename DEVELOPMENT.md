@@ -27,12 +27,12 @@ Common bump commands:
 
 ```bash
 # patch bump
-bun --cwd packages/cli pm version patch --no-git-tag-version
-bun --cwd packages/sdk pm version patch --no-git-tag-version
-bun --cwd packages/opencode-plugin pm version patch --no-git-tag-version
+bun pm --cwd packages/cli version patch --no-git-tag-version
+bun pm --cwd packages/sdk version patch --no-git-tag-version
+bun pm --cwd packages/opencode-plugin version patch --no-git-tag-version
 
 # explicit version
-bun --cwd packages/cli pm version 0.1.0 --no-git-tag-version
+bun pm --cwd packages/cli version 0.1.0 --no-git-tag-version
 ```
 
 If you want git tags/commits from version bumps, remove
@@ -94,20 +94,35 @@ aglit --help
 
 ## Local Install and Smoke Test
 
-From this repo:
+Local dev via `bun link`:
 
 ```bash
-bun run build -C packages/cli
-bun add -g file:./packages/cli
+bun run --cwd packages/cli build
+bun link --cwd packages/cli
+
+# in another project directory
+bun link aglit
 aglit --help
 ```
 
-Alternative (publish-like tarball install):
+Publish-like smoke test from this repo (tarball install):
+
+```bash
+bun run --cwd packages/cli build
+TARBALL="$(bun pm --cwd packages/cli pack --quiet --ignore-scripts --destination "$PWD/packages/cli" | tr -d '\n')"
+bun remove -g aglit
+bun add -g "$TARBALL"
+aglit --help
+```
+
+Alternative publish-like tarball install from `packages/cli`:
 
 ```bash
 cd packages/cli
-TARBALL=$(bun pm pack --quiet)
-bun add -g "./$TARBALL"
+bun run build
+TARBALL="$(bun pm pack --quiet --ignore-scripts --destination "$PWD" | tr -d '\n')"
+bun remove -g aglit
+bun add -g "$TARBALL"
 aglit --help
 ```
 
