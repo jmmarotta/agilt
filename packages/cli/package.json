@@ -1,6 +1,6 @@
 {
   "name": "aglit",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,14 +12,17 @@
     }
   },
   "bin": {
-    "aglit": "./dist/index.js"
+    "aglit": "dist/index.js"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "bun build src/index.ts --outdir dist --target bun --format esm --sourcemap --external @stricli/core --banner '#!/usr/bin/env bun\n' && tsgo -p tsconfig.json --emitDeclarationOnly",
     "prepack": "bun run build",
-    "publish:dry": "bun publish --dry-run",
-    "publish:run": "bun publish",
+    "publish:dry": "npm publish --dry-run",
+    "publish:run": "npm publish",
     "typecheck": "turbo run build --filter @jmmarotta/aglit-sdk && tsgo -p tsconfig.test.json --noEmit",
     "lint": "oxlint src",
     "fmt": "oxfmt --write src",
@@ -34,11 +37,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jmmarotta/agilt.git",
+    "url": "git+https://github.com/jmmarotta/aglit.git",
     "directory": "packages/cli"
   },
   "bugs": {
-    "url": "https://github.com/jmmarotta/agilt/issues"
+    "url": "https://github.com/jmmarotta/aglit/issues"
   },
-  "homepage": "https://github.com/jmmarotta/agilt/tree/main/packages/cli#readme"
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/jmmarotta/aglit/tree/main/packages/cli#readme"
 }

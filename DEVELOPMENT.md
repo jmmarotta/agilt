@@ -67,7 +67,7 @@ Publish from each package directory.
 ```bash
 cd packages/sdk
 bun publish --dry-run
-bun publish --access public
+bun publish
 ```
 
 ### OpenCode Plugin
@@ -75,7 +75,7 @@ bun publish --access public
 ```bash
 cd packages/opencode-plugin
 bun publish --dry-run
-bun publish --access public
+bun publish
 ```
 
 ### CLI
@@ -83,7 +83,7 @@ bun publish --access public
 ```bash
 cd packages/cli
 bun publish --dry-run
-bun publish --access public
+bun publish
 ```
 
 Post-publish verification:
