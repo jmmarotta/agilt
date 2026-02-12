@@ -8,8 +8,8 @@
     "build": "turbo run build",
     "dev": "bun packages/cli/src/index.ts",
     "start": "bun packages/cli/src/index.ts",
-    "publish:dry": "turbo run publish:dry --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk' --filter '@jmmarotta/opencode-aglit'",
-    "publish": "turbo run publish:run --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk' --filter '@jmmarotta/opencode-aglit'",
+    "publish:dry": "turbo run publish:dry --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk'",
+    "publish": "turbo run publish:run --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk'",
     "typecheck": "turbo run typecheck",
     "lint": "turbo run lint",
     "fmt": "turbo run fmt",
@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "@jmmarotta/aglit-sdk": "workspace:*",
-    "@opencode-ai/plugin": "^1",
     "@tsconfig/bun": "latest",
     "@typescript/native-preview": "latest",
     "@types/bun": "latest",

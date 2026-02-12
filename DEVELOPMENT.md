@@ -7,7 +7,6 @@ temporary personal-scope phase.
 
 - CLI: `aglit`
 - SDK: `@jmmarotta/aglit-sdk`
-- OpenCode plugin: `@jmmarotta/opencode-aglit`
 
 Notes:
 
@@ -31,7 +30,6 @@ Common bump commands:
 # patch bump
 bun pm --cwd packages/cli version patch --no-git-tag-version
 bun pm --cwd packages/sdk version patch --no-git-tag-version
-bun pm --cwd packages/opencode-plugin version patch --no-git-tag-version
 
 # explicit version
 bun pm --cwd packages/cli version 0.1.0 --no-git-tag-version
@@ -66,14 +64,6 @@ Publish from each package directory.
 
 ```bash
 cd packages/sdk
-bun publish --dry-run
-bun publish
-```
-
-### OpenCode Plugin
-
-```bash
-cd packages/opencode-plugin
 bun publish --dry-run
 bun publish
 ```
@@ -145,8 +135,8 @@ This repo is configured with:
 From repo root, run filtered, serial publishes:
 
 ```bash
-turbo run publish:dry --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk' --filter '@jmmarotta/opencode-aglit'
-turbo run publish:run --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk' --filter '@jmmarotta/opencode-aglit'
+turbo run publish:dry --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk'
+turbo run publish:run --concurrency 1 --filter aglit --filter '@jmmarotta/aglit-sdk'
 ```
 
 Convenience aliases also exist at root:
