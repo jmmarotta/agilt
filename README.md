@@ -45,12 +45,17 @@ bunx aglit --help
 
 Local development from a checkout (`bun link`):
 ```bash
+# from this repo root
 bun run --cwd packages/cli build
 bun link --cwd packages/cli
 
-# in another project directory
-bun link aglit
+# now available in your shell
 aglit --help
+```
+
+Optional: in another project directory, link it as a dependency:
+```bash
+bun link aglit
 ```
 
 Publish-like local install check (tarball):
@@ -61,6 +66,9 @@ bun remove -g aglit
 bun add -g "$TARBALL"
 aglit --help
 ```
+
+Use this tarball flow as a packaging smoke test. For day-to-day local CLI usage,
+prefer `bun link --cwd packages/cli`.
 
 ```bash
 aglit init --prefix ABC

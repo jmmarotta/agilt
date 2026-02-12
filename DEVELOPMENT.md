@@ -13,8 +13,10 @@ Notes:
 
 - `aglit` stays unscoped so global installs and `bunx` are simple.
 - Package versions are independent.
-- The CLI is bundled so local file installs do not require workspace resolution
-  of SDK dependencies.
+- The CLI is bundled, so publish/tarball installs do not require workspace
+  resolution of SDK dependencies.
+- Installing directly from `packages/cli` still resolves workspace deps; use
+  `bun link` for local development.
 
 ## Versioning Strategy
 
@@ -97,12 +99,17 @@ aglit --help
 Local dev via `bun link`:
 
 ```bash
+# from this repo root
 bun run --cwd packages/cli build
 bun link --cwd packages/cli
 
-# in another project directory
-bun link aglit
+# now available in your shell
 aglit --help
+```
+
+Optional: in another project directory, link it as a dependency:
+```bash
+bun link aglit
 ```
 
 Publish-like smoke test from this repo (tarball install):

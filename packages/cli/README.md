@@ -19,6 +19,23 @@ Run without installing:
 bunx aglit@latest --help
 ```
 
+Local development from this repository:
+
+```bash
+# in packages/cli
+bun run build
+bun link
+
+# now available in your shell
+aglit --help
+```
+
+Optional: in another project directory, link it as a dependency:
+
+```bash
+bun link aglit
+```
+
 ## Quick start
 
 ```bash
