@@ -14,7 +14,8 @@ Use `aglit` for create/list/validate actions. Edit issue/project markdown files 
 3. If project context is needed, run `aglit projects` and filter by slug if needed.
 4. If no matching issue exists, create one with `aglit new`.
 5. Edit `.aglit/issues/*.md` or `.aglit/projects/*.md` with file tools.
-6. Before handoff on major updates, run `aglit check`.
+6. While implementing, keep the active issue updated (status plus `## Plan`/`## Verification`) so progress is visible in the issue file.
+7. Before handoff on major updates, run `aglit check`.
 
 ## Invariants
 
@@ -22,6 +23,7 @@ Use `aglit` for create/list/validate actions. Edit issue/project markdown files 
 - `id` and `projectId` must be UUIDv7 strings.
 - Link issue to project with `projectId` only (never slug).
 - Resolve slug -> id via `aglit new --project <slug>` or project frontmatter.
+- Update issue status and body sections as work progresses; do not leave progress tracking only in chat.
 - Treat `aglit check` warnings/errors as action items unless the user explicitly defers.
 
 ## Common Flows
